@@ -35,7 +35,7 @@ if __name__ == '__main__':
     while True:
         for i,(image,segment_image) in enumerate(data_loader):
             image,segment_image = image.to(device),segment_image.to(device)
-
+            print(image.shape)
             out_image = net(image)
             train_loss = loss_fun(out_image,segment_image)
 
